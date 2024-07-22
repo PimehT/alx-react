@@ -9,7 +9,7 @@ function updateCounter() {
   };
 }
 
-$(document).ready(function () {
+$(function () {
   $('body').append('<p>Holberton Dashboard</p>',
     '<p>Dashboard data for the students</p>',
     '<button>Click here to get started</button>',
