@@ -1,9 +1,9 @@
 import $ from 'jquery';
 import _ from 'lodash';
 
-function updateCounter() {
+function updateCounter () {
   let count = 0;
-  return function() {
+  return function () {
     count++;
     $('#count').text(`${count} clicks on the button`);
   };
