@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "dashboard_main.js",
   "scripts": {
-    "build": "webpack --mode production"
+    "build": "webpack"
   },
   "keywords": [],
   "author": "",
