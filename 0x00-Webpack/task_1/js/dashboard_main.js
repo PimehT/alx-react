@@ -1,19 +1,21 @@
 import $ from 'jquery';
 import _ from 'lodash';
 
-$(document).ready(function(){
-$('body').append('<p>Holberton Dashboard</p>');
-$('body').append('<p>Dashboard data for the students</p>');
-$('body').append('<button id="startButton">Click here to get started</button>');
-$('body').append('<p id="count">{count}</p>');
-$('body').append('<p>Copyright - Holberton School</p>');
+function updateCounter () {
+  let count = 0;
+  return function () {
+    count++;
+    $('#count').text(`${count} clicks on the button`);
+  };
+}
 
-// Function to update counter and bind debounce
-let count = 0;
-const updateCounter = _.debounce(() => {
-  count++;
-  $('#count').text(`${count} clicks on the button`);
-}, 300);
-// Bind debounce function to click event on the button
-$('#startButton').on('click', updateCounter);
+$(function () {
+  $('body').append('<p>Holberton Dashboard</p>',
+    '<p>Dashboard data for the students</p>',
+    '<button>Click here to get started</button>',
+    '<p id="count"></p>',
+    '<p>Copyright - Holberton School</p>'
+  );
+  const countUpdate = updateCounter();
+  $('button').on('click', _.debounce(countUpdate, 300));
 });
