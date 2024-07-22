@@ -4,8 +4,8 @@ import _ from 'lodash';
 $(function () {
   $('body').append('<p>Holberton Dashboard</p>',
     '<p>Dashboard data for the students</p>',
-    '<button>Click here to get started</button>',
-    '<p id="count"></p>',
+    '<button id="start-btn">Click here to get started</button>',
+    '<p id="count">{count}</p>',
     '<p>Copyright - Holberton School</p>'
   );
   let count = 0;
@@ -13,5 +13,5 @@ $(function () {
     count++;
     $('#count').text(`${count} clicks on the button`);
   }, 300);
-  $('button').on('click', updateCounter);
+  $('#start-btn').on('click', updateCounter);
 });
