@@ -20,8 +20,6 @@ module.exports = {
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      filename: 'index.html',
-    }),
+    new HtmlWebpackPlugin(),
   ],
 };
