@@ -1,6 +1,6 @@
+import '../css/main.css';
 import $ from 'jquery';
 import _ from 'lodash';
-import '../css/main.css';
 
 function updateCounter() {
   let count = 0;
