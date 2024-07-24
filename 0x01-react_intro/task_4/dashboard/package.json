@@ -19,7 +19,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://PimehT.github.io/alx-react/",
+  "homepage": "https://pimeht.github.io/alx-react/",
   "eslintConfig": {
     "extends": [
       "react-app",
