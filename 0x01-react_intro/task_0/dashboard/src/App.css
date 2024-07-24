@@ -1,0 +1,40 @@
+:root {
+  --color-primary: #E02241;
+  --font-family: Arial, Helvetica, sans-serif;
+}
+
+*, *:after, *:before {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+}
+
+.App-header {
+  display: flex;
+  align-items: center;
+  border-bottom: .2rem solid var(--color-primary);
+}
+
+.App-header .logo {
+  width: 200px;
+  height: 200px;
+}
+
+.App-header h1 {
+  color: var(--color-primary);
+}
+
+.App-body {
+  height: 50vh;
+  padding: 4rem 2rem;
+}
+
+.App-footer {
+  border-top: .2rem solid var(--color-primary);
+  padding-top: 1rem;
+}
+
+.App-footer p {
+  text-align: center;
+  font-style: italic;
+}
