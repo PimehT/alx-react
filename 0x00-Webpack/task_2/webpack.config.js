@@ -9,30 +9,24 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'public')
   },
-  performance: {
-    hints: false,
-    maxAssetSize: 512000,
-    maxEntrypointSize: 512000,
-  },
   module: {
     rules: [
       {
-        test: /\.css$/i,
+        test: /\.css$/,
         use: ["style-loader", "css-loader"]
       },
       {
-        test: /\.(gif|png|jp?g|svg)$/i,
-        use: [
-          "file-loader",
-          {
-            loader: "image-webpack-loader",
-            options: {
-              bypassOnDebug: true,
-              disable: true,
-            },
-          },
-        ],
+        test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
+        type: 'asset/resource',
       },
-    ],
+    ]
+  },
+  resolve: {
+    extensions: ['.js', '.jsx', '.css']
+  },
+  performance: {
+    maxAssetSize: 512000,
+    maxEntrypointSize: 512000,
+    hints: false,
   },
 }
