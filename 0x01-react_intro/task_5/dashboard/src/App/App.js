@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { getFullYear, getFooterCopy } from '../utils/utils';
 
-import logo from '../assets/logo.jpg';
+import logo from '../assets/holberton-logo.jpg';
 import './App.css';
 
 
