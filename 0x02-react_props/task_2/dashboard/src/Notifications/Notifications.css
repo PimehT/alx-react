@@ -1,0 +1,23 @@
+:root {
+  --color-primary: #E02241;
+  --color-urgent: #FF0000;
+  --color-default: #01017e;
+  --font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.Notifications {
+  border: .1px dashed var(--color-primary);
+}
+
+.Notifications p {
+  margin: 2rem 0;
+}
+
+.Notifications ul li[data-notification-type="default"] {
+  color: var(--color-default);
+}
+
+.Notifications ul li[data-urgent="true"], .Notifications ul li[data-notification-type="urgent"] {
+  color: var(--color-urgent);
+}
