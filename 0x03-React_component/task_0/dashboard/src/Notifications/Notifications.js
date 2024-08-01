@@ -6,7 +6,7 @@ import NotificationItem from "./NotificationItem";
 import NotificationItemShape from "./NotificationItemShape";
 import PropTypes from "prop-types";
 
-function Notifications({ displayDrawer, listNotifications }) {
+function Notifications({ displayDrawer = false, listNotifications = [] }) {
   return (
     <React.Fragment>
       {displayDrawer ? (
@@ -63,11 +63,6 @@ function Notifications({ displayDrawer, listNotifications }) {
 Notifications.propTypes = {
   displayDrawer: PropTypes.bool,
   listNotifications: PropTypes.arrayOf(NotificationItemShape),
-};
-
-Notifications.defaultProps = {
-  displayDrawer: false,
-  listNotifications: [],
 };
 
 export default Notifications;
