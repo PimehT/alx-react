@@ -1,0 +1,9 @@
+@import url('../App/App.css');
+
+.Login-form #email, .Login-form #password {
+  margin: 0 1rem;
+}
+
+input {
+  border: .1rem solid var(--color-grey);
+}

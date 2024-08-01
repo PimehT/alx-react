@@ -1,0 +1,44 @@
+:root {
+  --color-primary: #E02241;
+  --color-urgent: #FF0000;
+  --color-default: #01017e;
+  --font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.Notifications {
+  border: .1px dashed var(--color-primary);
+  width: 30rem;
+  position: relative;
+}
+
+.Notifications p {
+  margin: 1rem 0;
+}
+
+.Notifications ul {
+  list-style: disc;
+  margin-left: 3rem;
+}
+
+.Notifications ul li[data-notification-type="default"] {
+  color: var(--color-default);
+}
+
+.Notifications ul li[data-urgent="true"], .Notifications ul li[data-notification-type="urgent"] {
+  color: var(--color-urgent);
+}
+
+.flex-area {
+  position: absolute;
+  right: 0.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.menuItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
