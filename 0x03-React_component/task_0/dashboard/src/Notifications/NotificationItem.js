@@ -19,8 +19,4 @@ NotificationItem.propTypes = {
   }),
 };
 
-NotificationItem.defaultProps = {
-  type: "default",
-};
-
 export default NotificationItem;
