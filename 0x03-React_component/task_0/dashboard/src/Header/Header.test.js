@@ -4,7 +4,8 @@ import Header from './Header';
 
 describe('Header component', () => {
   it('renders without crashing', () => {
-    shallow(<Header />);
+    const wrapper = shallow(<Header />);
+    expect(wrapper.exists()).toEqual(true);
   });
 
   it('renders img and h1 tags', () => {

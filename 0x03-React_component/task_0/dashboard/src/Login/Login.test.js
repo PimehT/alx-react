@@ -4,7 +4,8 @@ import Login from './Login';
 
 describe('Login component', () => {
   it('renders without crashing', () => {
-    shallow(<Login />);
+    const wrapper = shallow(<Login />);
+    expect(wrapper.exists()).toBe(true);
   });
 
   it('renders 2 input tags and 2 label tags', () => {

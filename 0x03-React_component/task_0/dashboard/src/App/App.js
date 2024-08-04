@@ -5,6 +5,7 @@ import Login from '../Login/Login';
 import Footer from '../Footer/Footer';
 import CourseList from '../CourseList/CourseList';
 import PropTypes from 'prop-types';
+import { getLatestNotification } from '../utils/utils';
 
 import './App.css';
 
@@ -19,7 +20,7 @@ class App extends Component {
     const listNotifications = [
       { id: 1, type: 'default', value: 'New course available' },
       { id: 2, type: 'urgent', value: 'New resume available' },
-      { id: 3, type: 'urgent', html: { __html: '<strong>Urgent requirement</strong> - complete by EOD' } },
+      { id: 3, type: 'urgent', html: getLatestNotification() },
     ];
 
     return (

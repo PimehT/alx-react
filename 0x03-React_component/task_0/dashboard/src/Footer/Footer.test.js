@@ -4,7 +4,8 @@ import Footer from './Footer';
 
 describe('Footer component', () => {
   it('renders without crashing', () => {
-    shallow(<Footer />);
+    const wrapper = shallow(<Footer />);
+    expect(wrapper.exists()).toBe(true);
   });
 
   it('renders the text "Copyright"', () => {
