@@ -33,7 +33,7 @@ function Notifications({ displayDrawer, listNotifications }) {
               <img src={closeIcon} alt="closeIcon" width="10px" />
             </button>
             {listNotifications.length === 0 ? (
-              <NotificationItem type="default" value="No new notification for now" />
+              <p>No new notification for now</p>
             ) : (
               <>
                 <p>Here is the list of notifications</p>
