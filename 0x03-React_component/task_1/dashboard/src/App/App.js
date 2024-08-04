@@ -10,6 +10,27 @@ import { getLatestNotification } from '../utils/utils';
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.handleLogout = this.handleLogout.bind(this);
+  }
+
+  handleLogout(event) {
+    if (event.ctrlKey && event.key === 'h') {
+      event.preventDefault();
+      alert('Logging you out');
+      this.props.logOut();
+    }
+  }
+
+  componentDidMount() {
+    window.addEventListener('keydown', this.handleLogout);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('keydown', this.handleLogout);
+  }
+
   render() {
     const listCourses = [
       { id: 1, name: 'ES6', credit: 60 },
@@ -38,10 +59,12 @@ class App extends Component {
 
 App.defaultProps = {
   isLoggedIn: false,
+  logOut: () => {},
 };
 
 App.propTypes = {
   isLoggedIn: PropTypes.bool,
+  logOut: PropTypes.func,
 };
 
 export default App;
