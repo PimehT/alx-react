@@ -1,9 +1,11 @@
 @import url('../App/App.css');
 
-.Login-form #email, .Login-form #password {
-  margin: 0 1rem;
+.App-body {
+  height: 50vh;
+  padding: 4rem 2rem;
 }
 
-input {
-  border: .1rem solid var(--color-grey);
+.Login-form label,
+.Login-form input {
+  margin: 0 10px;
 }

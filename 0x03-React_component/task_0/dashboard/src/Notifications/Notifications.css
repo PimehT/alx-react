@@ -1,31 +1,26 @@
-:root {
-  --color-primary: #E02241;
-  --color-urgent: #FF0000;
-  --color-default: #01017e;
-  --font-family: Arial, Helvetica, sans-serif;
-
-}
+@import url('../App/App.css');
 
 .Notifications {
-  border: .1px dashed var(--color-primary);
+  border: .1rem dashed var(--color-primary);
   width: 30rem;
   position: relative;
 }
 
 .Notifications p {
-  margin: 1rem 0;
+  padding: 10px 2px 0 2px;
 }
 
-.Notifications ul {
+.Notifications-list {
   list-style: disc;
-  margin-left: 3rem;
+  margin: 1rem 0 1rem 2rem;
 }
 
-.Notifications ul li[data-notification-type="default"] {
+.Notifications-list li[data-notification-type="default"] {
   color: var(--color-default);
 }
 
-.Notifications ul li[data-urgent="true"], .Notifications ul li[data-notification-type="urgent"] {
+.Notifications-list li[data-notification-type="urgent"],
+.Notifications-list li[data-urgent="true"] {
   color: var(--color-urgent);
 }
 
