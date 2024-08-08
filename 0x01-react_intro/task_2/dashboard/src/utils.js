@@ -3,13 +3,12 @@ export function getFullYear () {
 }
 
 export function getFooterCopy (isIndex) {
-  if (typeof isIndex === 'boolean') {
-    return isIndex ? 'Holberton School' : 'Holberton School main dashboard';
-  } else {
-    throw new Error('not a boolean');
-  }
+  return (
+    isIndex ? 'Holberton School'
+    : 'Holberton School main dashboard'
+  );
 }
 
 export function getLatestNotification () {
-  return '<strong>Ur<strong>Urgent requirement</strong> - complete by EOD';
+  return '<strong>Urgent requirement</strong> - complete by EOD';
 }

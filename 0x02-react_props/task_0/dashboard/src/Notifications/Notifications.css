@@ -1,23 +1,22 @@
-:root {
-  --color-primary: #E02241;
-  --color-urgent: #FF0000;
-  --color-default: #020267;
-  --font-family: Arial, Helvetica, sans-serif;
-
-}
+@import url('../App/App.css');
 
 .Notifications {
-  border: .1px dashed var(--color-primary);
+  border: .1rem dashed var(--color-primary);
 }
 
 .Notifications p {
-  margin: 2rem 0;
+  padding: 10px 2px 0 2px;
 }
 
-.Notifications ul li:first-child {
+.Notifications-list {
+  list-style: disc;
+  margin: 1rem 0 1rem 2rem;
+}
+
+.Notifications-list li[data="default"] {
   color: var(--color-default);
 }
 
-.Notifications ul li:nth-child(n+2) {
+.Notifications-list li[data="urgent"] {
   color: var(--color-urgent);
 }

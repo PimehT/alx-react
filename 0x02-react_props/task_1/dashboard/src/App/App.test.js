@@ -6,7 +6,7 @@ import Header from '../Header/Header';
 import Login from '../Login/Login';
 import Footer from '../Footer/Footer';
 
-describe('App component', () => {
+describe('<App />', () => {
   let wrapper;
 
   beforeEach(() => {
@@ -14,22 +14,26 @@ describe('App component', () => {
   });
 
   it('renders without crashing', () => {
-    expect(wrapper.exists()).toBe(true);
+    expect(wrapper).toBeDefined();
   });
 
-  it('renders the Notifications component', () => {
+  it('contains the Notifications component', () => {
+    expect(wrapper.find(Notifications).exists()).toBe(true);
     expect(wrapper.find(Notifications)).toHaveLength(1);
   });
 
-  it('renders the Header component', () => {
+  it('contains the Header component', () => {
+    expect(wrapper.find(Header).exists()).toBe(true);
     expect(wrapper.find(Header)).toHaveLength(1);
   });
 
-  it('renders the Login component', () => {
+  it('contains the Login component', () => {
+    expect(wrapper.find(Login).exists()).toBe(true);
     expect(wrapper.find(Login)).toHaveLength(1);
   });
 
-  it('renders the Footer component', () => {
+  it('contains the Footer component', () => {
+    expect(wrapper.find(Footer).exists()).toBe(true);
     expect(wrapper.find(Footer)).toHaveLength(1);
   });
 });

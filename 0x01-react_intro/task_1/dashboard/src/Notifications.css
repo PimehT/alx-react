@@ -1,12 +1,6 @@
-:root {
-  --color-primary: #E02241;
-  --font-family: Arial, Helvetica, sans-serif;
-}
+@import url('./App.css');
 
-.Notifications {
-  border: .1px dashed var(--color-primary);
-}
-
-.Notifications p {
-  margin: 2rem 0;
+.root-notifications {
+  border: .1rem dashed var(--color-primary);
+  padding: 10px 2px;
 }

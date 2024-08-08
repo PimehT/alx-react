@@ -6,7 +6,7 @@ const NotificationItemShape = PropTypes.shape({
     __html: PropTypes.string,
   }),
   type: PropTypes.string.isRequired,
-  value: PropTypes.string,
+  value: PropTypes.string
 });
 
 export default NotificationItemShape;

@@ -1,15 +1,17 @@
-import React from 'react';
+import React from "react";
+import CourseList from "./CourseList";
 import { shallow } from 'enzyme';
-import CourseList from './CourseList';
 
 describe('<CourseList />', () => {
-  it('renders a <CourseList /> component', () => {
+  it('renders without crashing', () => {
     const wrapper = shallow(<CourseList />);
-    expect(wrapper).toHaveLength(1);
+    expect(wrapper).toBeDefined();
+    expect(wrapper.find('table#CourseList')).toHaveLength(1);
   });
 
-  it('renders the 5 different rows', () => {
+  it('renders 5 different rows', () => {
     const wrapper = shallow(<CourseList />);
-    expect(wrapper.find('CourseListRow')).toHaveLength(5);
-  });
-});
+    expect(wrapper.find('thead').children()).toHaveLength(2);
+    expect(wrapper.find('tbody').children()).toHaveLength(3);
+  })
+})

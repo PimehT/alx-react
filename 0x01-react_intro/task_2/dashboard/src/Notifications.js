@@ -1,40 +1,36 @@
 import React from 'react';
-import './Notifications.css';
 import Close from './close-icon.png';
+import './Notifications.css';
+import { getLatestNotification } from './utils';
 
-export default function Notifications () {
+function Notifications () {
   const handleClick = () => {
     console.log('Close button has been clicked');
-  };
-
-  const getLatestNotification = () => {
-    return '<strong>Urgent requirement</strong> - complete by EOD';
   }
 
   return (
-    <div className='Notifications' style={{position: 'relative'}}>
-      <button
-        aria-label='Close'
-        onClick={handleClick}
-        style={
-          {position: 'absolute',
-            right: '.2rem',
-            top: '.2rem',
-            border: 'none',
-            background: 'none'
-          }
-        }
-      >
-        <img src={Close} alt='close-icon' style={{ width: '.5rem'}} />
-      </button>
+    <div className='Notifications' style={{ position: 'relative' }}>
       <p>Here is the list of notifications</p>
-      <ul>
+      <ul className='Notifications-list'>
         <li data='default'>New course available</li>
         <li data='urgent'>New resume available</li>
-        <li data='urgent' dangerouslySetInnerHTML={{
-          __html: getLatestNotification()
-        }}></li>
+        <li data='urgent' dangerouslySetInnerHTML={{ __html: getLatestNotification() }}></li>
       </ul>
+      <button
+        style={{
+          position: 'absolute',
+          top: 0,
+          right: 0,
+          background: 'none',
+          border: 'none',
+        }}
+        aria-label='Close'
+        onClick={handleClick}
+      >
+        <img src={Close} alt='close button' width='10px' />
+      </button>
     </div>
   );
 }
+
+export default Notifications;
