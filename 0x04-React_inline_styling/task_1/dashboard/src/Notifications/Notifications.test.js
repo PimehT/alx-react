@@ -3,7 +3,6 @@ import { shallow } from 'enzyme';
 import Notifications from './Notifications';
 import NotificationItem from './NotificationItem';
 import { getLatestNotification } from '../utils/utils';
-import { StyleSheetTestUtils } from 'aphrodite';
 
 const listNotifications = [
   { id: 1, type: 'default', value: 'New course available' },
@@ -12,14 +11,6 @@ const listNotifications = [
 ];
 
 describe('<Notifications />', () => {
-  beforeEach(() => {
-    StyleSheetTestUtils.suppressStyleInjection();
-  });
-
-  afterEach(() => {
-    StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
-  });
-  
   it('renders without crashing', () => {
     const wrapper = shallow(<Notifications />);
     expect(wrapper).toBeDefined();
@@ -38,10 +29,10 @@ describe('<Notifications />', () => {
     expect(firstNotificationItem.html()).toEqual(expectedHtml);
   });
 
-  // it('renders div.menuItem when displayDrawer is false', () => {
-  //   const wrapper = shallow(<Notifications displayDrawer={false} />);
-  //   expect(wrapper.find('div.menuItem')).toHaveLength(1);
-  // });
+  it('renders div.menuItem when displayDrawer is false', () => {
+    const wrapper = shallow(<Notifications displayDrawer={false} />);
+    expect(wrapper.find('div.menuItem')).toHaveLength(1);
+  });
 
   it('does not render div.Notifications when displayDrawer is false', () => {
     const wrapper = shallow(<Notifications displayDrawer={false} />);
@@ -55,7 +46,7 @@ describe('<Notifications />', () => {
 
   it('renders div.Notifications when displayDrawer is true', () => {
     const wrapper = shallow(<Notifications displayDrawer={true} />);
-    expect(wrapper.find('div.Notifications')).toHaveLength(0);
+    expect(wrapper.find('div.Notifications')).toHaveLength(1);
   });
 
   it('renders with empty listNotifications property or without the property at all', () => {
