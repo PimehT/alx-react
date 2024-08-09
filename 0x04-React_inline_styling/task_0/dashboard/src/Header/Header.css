@@ -1,0 +1,16 @@
+@import url('../App/App.css');
+
+.App-header {
+  display: flex;
+  align-items: center;
+  border-bottom: .2rem solid var(--color-primary);
+}
+
+.App-header .logo {
+  width: 200px;
+  height: 200px;
+}
+
+.App-header h1 {
+  color: var(--color-primary);
+}

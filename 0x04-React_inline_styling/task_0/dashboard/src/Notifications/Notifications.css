@@ -1,0 +1,40 @@
+@import url('../App/App.css');
+
+.Notifications {
+  border: .1rem dashed var(--color-primary);
+  width: 30rem;
+  position: relative;
+  z-index: 5;
+}
+
+.Notifications p {
+  padding: 10px 2px 0 2px;
+}
+
+.Notifications-list {
+  list-style: disc;
+  margin: 1rem 0 1rem 2rem;
+}
+
+.Notifications-list li[data-notification-type="default"] {
+  color: var(--color-default);
+}
+
+.Notifications-list li[data-notification-type="urgent"],
+.Notifications-list li[data-urgent="true"] {
+  color: var(--color-urgent);
+}
+
+.flex-area {
+  position: absolute;
+  right: 0.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.menuItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
