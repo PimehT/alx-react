@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { StyleSheet, css } from 'aphrodite';
 import BodySection from '../BodySection/BodySection';
 import BodySectionWithMarginBottom from '../BodySection/BodySectionWithMarginBottom';
 import CourseList from '../CourseList/CourseList';
@@ -8,7 +9,6 @@ import Header from '../Header/Header';
 import Login from '../Login/Login';
 import Notifications from '../Notifications/Notifications';
 import { getLatestNotification } from '../utils/utils';
-import { StyleSheet, css } from 'aphrodite';
 
 class App extends Component {
   componentDidMount() {
@@ -29,7 +29,6 @@ class App extends Component {
   render() {
     const { isLoggedIn } = this.props;
 
-
     const listCourses = [
       { id: 1, name: 'ES6', credit: 60 },
       { id: 2, name: 'Webpack', credit: 20 },
@@ -44,20 +43,25 @@ class App extends Component {
 
     return (
       <>
-        <div className={css(appStyle.App)}>
-          <Notifications listNotifications={listNotifications} />
+        <Notifications listNotifications={listNotifications} />
+        <div className={css(styles.app)}>
           <Header />
           {isLoggedIn ? (
-            <BodySectionWithMarginBottom title='Course list'>
+            <BodySectionWithMarginBottom title="Course list">
               <CourseList listCourses={listCourses} />
             </BodySectionWithMarginBottom>
           ) : (
-            <BodySectionWithMarginBottom title='Log in to continue'>
+            <BodySectionWithMarginBottom title="Log in to continue">
               <Login />
             </BodySectionWithMarginBottom>
           )}
           <BodySection title="News from the School">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, repellat temporibus, nemo necessitatibus accusantium a eligendi sed esse aperiam ea nam aliquid debitis facere voluptate explicabo eum, voluptates iusto corporis.</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Est,
+              repellat temporibus, nemo necessitatibus accusantium a eligendi
+              sed esse aperiam ea nam aliquid debitis facere voluptate explicabo
+              eum, voluptates iusto corporis.
+            </p>
           </BodySection>
           <Footer />
         </div>
@@ -65,23 +69,6 @@ class App extends Component {
     );
   }
 }
-
-const colorPrimary = '#E02241';
-const colorUrgent = '#FF0000';
-const colorDefault = '#01017e';
-const colorGrey = '#999999';
-const fontFamily = 'Arial, Helvetica, sans-serif';
-
-const appStyle = StyleSheet.create({
-  App: {
-    height: '100vh',
-    maxWidth: '100vw',
-    position: 'relative',
-    margin: '0',
-    padding: '0.1rem',
-    fontFamily: fontFamily,
-  },
-})
 
 App.propTypes = {
   isLoggedIn: PropTypes.bool,
@@ -92,5 +79,18 @@ App.defaultProps = {
   isLoggedIn: false,
   logOut: () => {},
 };
+
+const styles = StyleSheet.create({
+  app: {
+    fontFamily: 'Arial, Helvetica, sans-serif',
+    margin: 0,
+    padding: '0.1rem',
+  },
+  footer: {
+    borderTop: '1px solid #E02241',
+    textAlign: 'center',
+    padding: '1rem',
+  },
+});
 
 export default App;
