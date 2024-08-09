@@ -1,0 +1,11 @@
+@import url('../App/App.css');
+
+.App-footer {
+  border-top: .2rem solid var(--color-primary);
+  padding-top: 1rem;
+}
+
+.App-footer p {
+  text-align: center;
+  font-style: italic;
+}

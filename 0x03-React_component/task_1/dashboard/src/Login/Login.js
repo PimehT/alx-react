@@ -3,7 +3,7 @@ import './Login.css';
 
 function Login() {
   return (
-    <div className='App-body'>
+    <div className='Login'>
       <p>Login to access the full dashboard</p>
       <form className='Login-form'>
         <label htmlFor="email">Email:</label>
