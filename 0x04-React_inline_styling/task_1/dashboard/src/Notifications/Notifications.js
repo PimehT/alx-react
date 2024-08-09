@@ -94,6 +94,9 @@ const styles = StyleSheet.create({
     listStyle: 'disc',
     margin: '1rem 0 1rem 2rem',
   },
+  p: {
+    padding: '10px 2px 0 2px',
+  },
   flexArea: {
     position: 'absolute',
     right: '0.2rem',
