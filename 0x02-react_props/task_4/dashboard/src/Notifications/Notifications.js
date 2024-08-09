@@ -29,6 +29,7 @@ function Notifications ({ displayDrawer }) {
                   right: 0,
                   background: 'none',
                   border: 'none',
+                  cursor: 'pointer',
                 }}
                 aria-label='Close'
                 onClick={handleClick}

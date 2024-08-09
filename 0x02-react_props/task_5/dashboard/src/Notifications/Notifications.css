@@ -4,6 +4,7 @@
   border: .1rem dashed var(--color-primary);
   width: 30rem;
   position: relative;
+  z-index: 5;
 }
 
 .Notifications p {
