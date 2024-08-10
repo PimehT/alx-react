@@ -21,7 +21,17 @@ class Notifications extends Component {
   }
 
   shouldComponentUpdate(nextProps) {
-    return nextProps.length > this.props.listNotifications.length;
+    if (nextProps.listNotifications.length !== this.props.listNotifications.length) {
+      return true;
+    }
+  
+    for (let i = 0; i < nextProps.listNotifications.length; i++) {
+      if (nextProps.listNotifications[i] !== this.props.listNotifications[i]) {
+        return true;
+      }
+    }
+  
+    return false;
   }
 
   render() {

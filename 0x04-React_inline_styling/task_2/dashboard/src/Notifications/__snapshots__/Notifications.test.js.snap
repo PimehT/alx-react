@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`does not rerender when updating with the same list 1`] = `"<div class=\\"flexArea_ihus7q\\"><div class=\\"Notifications_12hpjih\\" style=\\"position:relative\\"><p>Here is the list of notifications</p><ul class=\\"notificationsList_jz6u5d\\"><li class=\\"defaultItem_1tsdo2i\\" data-notification-type=\\"default\\">New course available</li><li class=\\"urgentItem_137u7ef\\" data-notification-type=\\"urgent\\">New resume available</li><li class=\\"urgentItem_137u7ef\\" data-notification-type=\\"urgent\\"></li></ul><button style=\\"position:absolute;top:0;right:0;background:none;border:none\\" aria-label=\\"Close\\"><img src=\\"test-file-stub\\" alt=\\"close button\\" width=\\"10px\\"/></button></div></div>"`;
