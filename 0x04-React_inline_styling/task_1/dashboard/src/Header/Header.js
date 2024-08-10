@@ -4,29 +4,24 @@ import { StyleSheet, css } from 'aphrodite';
 
 function Header() {
   return (
-    <div className={css(styles.Header)}>
-      <img src={logo} alt="Holberton Logo" className={css(styles.logo)} />
+    <div className={css(styles["App-header"])}>
+      <img src={logo} alt="Holberton Logo" className={css(styles.img["App-header"])} />
       <h1 className={css(styles.h1)}>School dashboard</h1>
     </div>
   );
 }
 
-const colorPrimary = '#E02241';
-
 const styles = StyleSheet.create({
-  Header: {
+  "App-header": {
     display: 'flex',
     alignItems: 'center',
-    borderBottom: `.2rem solid ${colorPrimary}`,
+    borderBottom: `.2rem solid #E02241`,
+    color: colorPrimary,
   },
 
-  logo: {
+  img: {
     width: '200px',
     height: '200px',
-  },
-
-  h1: {
-    color: colorPrimary,
   },
 });
 
