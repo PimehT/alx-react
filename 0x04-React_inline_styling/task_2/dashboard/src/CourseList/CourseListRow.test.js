@@ -1,6 +1,14 @@
 import React from "react";
 import CourseListRow from "./CourseListRow";
 import { shallow } from "enzyme";
+import { StyleSheetTestUtils } from "aphrodite";
+
+beforeEach(() => {
+  StyleSheetTestUtils.suppressStyleInjection();
+});
+afterEach(() => {
+  StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
+});
 
 describe('<CourseListRow />', () => {
   it('renders correctly th elements within a tr element when isHeader is true', () => {

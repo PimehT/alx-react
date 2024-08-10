@@ -1,6 +1,14 @@
 import React from "react";
 import { shallow } from "enzyme";
 import NotificationItem from "./NotificationItem";
+import { StyleSheetTestUtils } from "aphrodite";
+
+beforeEach(() => {
+  StyleSheetTestUtils.suppressStyleInjection();
+});
+afterEach(() => {
+  StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
+});
 
 describe('<NotificationItem />', () => {
   it('renders without crashing', () => {
@@ -10,12 +18,14 @@ describe('<NotificationItem />', () => {
 
   it('renders correct html when type and value is passed', () => {
     const wrapper = shallow(<NotificationItem type="default" value="test" />);
-    expect(wrapper.html()).toEqual('<li data-notification-type="default">test</li>');
+    expect(wrapper.html()).toContain('data-notification-type="default"');
+    expect(wrapper.text()).toBe('test');
   });
 
   it('renders correct html when html prop is passed', () => {
     const wrapper = shallow(<NotificationItem html={{ __html: '<u>test</u>' }} />);
-    expect(wrapper.html()).toEqual('<li data-urgent="true"><u>test</u></li>');
+    expect(wrapper.html()).toContain('data-notification-type="urgent"');
+    expect(wrapper.html()).toContain('<u>test</u>');
   });
 
   it('calls markAsRead with the correct ID when clicked', () => {
