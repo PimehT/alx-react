@@ -46,12 +46,12 @@ class App extends Component {
       <React.Fragment>
         <div className={css(styles.App)}>
           <div className="heading-section">
-            <Notifications listNotifications={this.listNotifications} />
+            <Notifications listNotifications={listNotifications} />
             <Header />
           </div>
-          {this.props.isLoggedIn ? (
+          {isLoggedIn ? (
             <BodySectionWithMarginBottom title="Course list">
-              <CourseList listCourses={this.listCourses} />
+              <CourseList listCourses={listCourses} />
             </BodySectionWithMarginBottom>
           ) : (
             <BodySectionWithMarginBottom title="Log in to continue">
