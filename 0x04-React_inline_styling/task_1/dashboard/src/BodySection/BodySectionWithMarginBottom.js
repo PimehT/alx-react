@@ -15,13 +15,13 @@ class BodySectionWithMarginBottom extends Component {
 
 const styles = StyleSheet.create({
   bodySectionWithMargin: {
-    marginBottom: '40px',
+    marginBottom: "40",
   },
-})
+});
 
 BodySectionWithMarginBottom.propTypes = {
-  title: PropTypes.string,
-  children: PropTypes.node,
+  title: PropTypes.string.isRequired,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
 };
 
 export default BodySectionWithMarginBottom;
