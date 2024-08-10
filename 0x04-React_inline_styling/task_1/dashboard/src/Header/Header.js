@@ -5,7 +5,7 @@ import { StyleSheet, css } from 'aphrodite';
 function Header() {
   return (
     <div className={css(styles["App-header"])}>
-      <img src={logo} alt="Holberton Logo" className={css(styles.img["App-header"])} />
+      <img src={logo} alt="Holberton Logo" className={css(styles.img)} />
       <h1 className={css(styles.h1)}>School dashboard</h1>
     </div>
   );

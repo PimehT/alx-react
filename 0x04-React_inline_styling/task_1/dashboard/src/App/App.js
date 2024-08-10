@@ -61,7 +61,9 @@ class App extends Component {
           <BodySection title="News from the School">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, repellat temporibus, nemo necessitatibus accusantium a eligendi sed esse aperiam ea nam aliquid debitis facere voluptate explicabo eum, voluptates iusto corporis.</p>
           </BodySection>
-          <Footer />
+          <div className={css(appStyle.appFooter)}>
+            <Footer />
+          </div>
         </div>
       </>
     );
@@ -83,7 +85,13 @@ const appStyle = StyleSheet.create({
     padding: '0.1rem',
     fontFamily: 'Arial, Helvetica, sans-serif',
   },
-})
+  appFooter: {
+    borderTop: '.2rem solid #E02241',
+    paddingTop: '1rem',
+    textAlign: 'center',
+    fontStyle: 'italic',
+  }
+});
 
 App.propTypes = {
   isLoggedIn: PropTypes.bool,
