@@ -43,25 +43,30 @@ class App extends Component {
     ];
 
     return (
-      <>
-        <div className={css(appStyle.App)}>
-          <Notifications listNotifications={listNotifications} />
-          <Header />
-          {isLoggedIn ? (
-            <BodySectionWithMarginBottom title='Course list'>
-              <CourseList listCourses={listCourses} />
+      <React.Fragment>
+        <div className={css(styles.App)}>
+          <div className="heading-section">
+            <Notifications listNotifications={this.listNotifications} />
+            <Header />
+          </div>
+          {this.props.isLoggedIn ? (
+            <BodySectionWithMarginBottom title="Course list">
+              <CourseList listCourses={this.listCourses} />
             </BodySectionWithMarginBottom>
           ) : (
-            <BodySectionWithMarginBottom title='Log in to continue'>
+            <BodySectionWithMarginBottom title="Log in to continue">
               <Login />
             </BodySectionWithMarginBottom>
           )}
-          <BodySection title="News from the School">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, repellat temporibus, nemo necessitatibus accusantium a eligendi sed esse aperiam ea nam aliquid debitis facere voluptate explicabo eum, voluptates iusto corporis.</p>
+          <BodySection title="News from the school">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis at tempora odio, necessitatibus repudiandae reiciendis cum nemo sed asperiores ut molestiae eaque aliquam illo ipsa
+              iste vero dolor voluptates.
+            </p>
           </BodySection>
           <Footer />
         </div>
-      </>
+      </React.Fragment>
     );
   }
 }
