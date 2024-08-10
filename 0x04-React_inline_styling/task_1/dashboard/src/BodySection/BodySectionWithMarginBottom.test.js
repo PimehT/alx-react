@@ -2,6 +2,14 @@ import React from "react";
 import { shallow } from "enzyme";
 import BodySection from "./BodySection";
 import BodySectionWithMarginBottom from "./BodySectionWithMarginBottom";
+import { StyleSheetTestUtils } from "aphrodite";
+
+beforeEach(() => {
+  StyleSheetTestUtils.suppressStyleInjection();
+});
+afterEach(() => {
+  StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
+});
 
 describe('<BodySectionWithMarginBottom />', () => {
   it('renders the BodySection correctly', () => {

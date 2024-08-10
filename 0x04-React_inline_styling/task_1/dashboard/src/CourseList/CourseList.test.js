@@ -1,6 +1,14 @@
 import React from "react";
 import CourseList from "./CourseList";
 import { shallow } from 'enzyme';
+import { StyleSheetTestUtils } from "aphrodite";
+
+beforeEach(() => {
+  StyleSheetTestUtils.suppressStyleInjection();
+});
+afterEach(() => {
+  StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
+});
 
 const listCourses = [
   { id: 1, name: 'ES6', credit: 60 },
