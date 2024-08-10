@@ -79,13 +79,9 @@ class Notifications extends Component {
   }
 }
 
-const colorPrimary = '#E02241';
-const colorDefault = '#01017e';
-const colorUrgent = '#FF0000';
-
 const styles = StyleSheet.create({
   Notifications: {
-    border: `.1rem dashed ${colorPrimary}`,
+    border: `.1rem dashed #E02241`,
     width: '30rem',
     position: 'relative',
     zIndex: 5,

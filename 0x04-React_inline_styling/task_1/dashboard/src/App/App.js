@@ -66,11 +66,11 @@ class App extends Component {
   }
 }
 
-const colorPrimary = '#E02241';
-const colorUrgent = '#FF0000';
-const colorDefault = '#01017e';
-const colorGrey = '#999999';
-const fontFamily = 'Arial, Helvetica, sans-serif';
+// const colorPrimary = '#E02241';
+// const colorUrgent = '#FF0000';
+// const colorDefault = '#01017e';
+// const colorGrey = '#999999';
+// const fontFamily = 'Arial, Helvetica, sans-serif';
 
 const appStyle = StyleSheet.create({
   App: {
@@ -79,7 +79,7 @@ const appStyle = StyleSheet.create({
     position: 'relative',
     margin: '0',
     padding: '0.1rem',
-    fontFamily: fontFamily,
+    fontFamily: 'Arial, Helvetica, sans-serif',
   },
 })
 

@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     alignItems: 'center',
     borderBottom: `.2rem solid #E02241`,
-    color: colorPrimary,
+    color: '#E02241',
   },
 
   img: {
