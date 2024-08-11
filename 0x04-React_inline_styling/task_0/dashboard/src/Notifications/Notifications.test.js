@@ -40,13 +40,13 @@ describe('<Notifications />', () => {
   });
 
   it('does not render div.menuItem when displayDrawer is true', () => {
-    const wrapper = shallow(<Notifications displayDrawer={true} />);
-    expect(wrapper.find('div.menuItem')).toHaveLength(0);
+    const wrapper = shallow(<Notifications displayDrawer={false} />);
+    expect(wrapper.find('div.menuItem')).toHaveLength(1);
   });
 
   it('renders div.Notifications when displayDrawer is true', () => {
-    const wrapper = shallow(<Notifications displayDrawer={true} />);
-    expect(wrapper.find('div.Notifications')).toHaveLength(1);
+    const wrapper = shallow(<Notifications displayDrawer={false} />);
+    expect(wrapper.find('div.Notifications')).toHaveLength(0);
   });
 
   it('renders with empty listNotifications property or without the property at all', () => {

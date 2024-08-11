@@ -1,10 +1,4 @@
-:root {
-  --color-primary: #E02241;
-  --color-urgent: #FF0000;
-  --color-default: #01017e;
-  --color-grey: #999999;
-  --font-family: Arial, Helvetica, sans-serif;
-}
+@import url('../App/App.css');
 
 .Login {
   padding: 4rem 2rem;
