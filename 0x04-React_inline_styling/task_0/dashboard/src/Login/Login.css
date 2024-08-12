@@ -1,0 +1,10 @@
+@import url('../App/App.css');
+
+.Login {
+  padding: 4rem 2rem;
+}
+
+.Login-form label,
+.Login-form input {
+  margin: 0 10px;
+}
