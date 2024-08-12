@@ -1,8 +1,16 @@
 import React from "react";
 import CourseListRow from "./CourseListRow";
 import { shallow } from "enzyme";
+import { StyleSheetTestUtils } from "aphrodite";
 
 describe('<CourseListRow />', () => {
+  beforeEach(() => {
+    StyleSheetTestUtils.suppressStyleInjection();
+  });
+  afterEach(() => {
+    StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
+  });
+  
   it('renders correctly th elements within a tr element when isHeader is true', () => {
     const wrapper1 = shallow(<CourseListRow isHeader={true} textFirstCell="test" />);
     const wrapper2 = shallow(<CourseListRow isHeader={true} textFirstCell="test" textSecondCell="test2" />);
