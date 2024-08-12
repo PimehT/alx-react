@@ -11,7 +11,7 @@ function CourseListRow({ isHeader, textFirstCell, textSecondCell }) {
     <tr style={selectedStyle}>
       {isHeader ? (
         textSecondCell === null ? (
-          <th colSpan={2} className={css(listRowStyles.thcenter)}>{textFirstCell}</th>
+          <th colSpan="2" className={css(listRowStyles.thcenter)}>{textFirstCell}</th>
         ) : (
           <>
             <th className={css(listRowStyles.th)}>{textFirstCell}</th>
