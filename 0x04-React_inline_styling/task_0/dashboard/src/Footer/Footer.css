@@ -1,4 +1,10 @@
-@import url('../App/App.css');
+:root {
+  --color-primary: #E02241;
+  --color-urgent: #FF0000;
+  --color-default: #01017e;
+  --color-grey: #999999;
+  --font-family: Arial, Helvetica, sans-serif;
+}
 
 .App-footer {
   border-top: .2rem solid var(--color-primary);
