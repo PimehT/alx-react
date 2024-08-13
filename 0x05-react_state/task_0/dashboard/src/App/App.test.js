@@ -99,3 +99,35 @@ describe('Keyboard events in <App />', () => {
     expect(instance.componentWillUnmount).toHaveBeenCalled();
   });
 });
+
+describe('Keyboard events in <App />', () => {
+  let wrapper;
+  let logOutMock;
+  let alertMock;
+
+  beforeEach(() => {
+    logOutMock = jest.fn();
+    alertMock = jest.spyOn(window, 'alert').mockImplementation(() => {});
+    wrapper = shallow(<App logOut={logOutMock} />);
+  });
+
+  afterEach(() => {
+    jest.restoreAllMocks();
+  });
+
+  it('calls logOut and shows alert when Control and H keys are pressed', () => {
+    const event = new KeyboardEvent('keydown', { key: 'h', ctrlKey: true });
+    document.dispatchEvent(event);
+
+    expect(alertMock).toHaveBeenCalledWith('Logging you out');
+    expect(logOutMock).toHaveBeenCalled();
+  });
+
+  it('removes the event listener when the component is unmounted', () => {
+    const instance = wrapper.instance();
+    jest.spyOn(instance, 'componentWillUnmount');
+    wrapper.unmount();
+
+    expect(instance.componentWillUnmount).toHaveBeenCalled();
+  });
+});

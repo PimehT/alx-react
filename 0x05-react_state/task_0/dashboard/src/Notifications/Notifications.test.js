@@ -67,7 +67,7 @@ describe('<Notifications />', () => {
   it('renders "No new notification for now" when listNotifications is empty', () => {
     const wrapper = shallow(<Notifications displayDrawer={true} listNotifications={[]} />);
     const text = 'No new notifications for now';
-    expect(wrapper.find('p').text()).toEqual(text);
+    expect(wrapper.find('p').last().text()).toEqual(text);
   });
 });
 
@@ -104,4 +104,45 @@ describe('<Notifications displayDrawer={true} listNotifications={listNotificatio
 
     expect(instance.shouldComponentUpdate({ listNotifications: newListNotifications })).toBe(true);
   });
+
+  it('should call handleDisplayDrawer when menu item clicked', () => {
+		const listNotifications = [
+			{ id: 1, type: 'default', value: 'New course available' },
+			{ id: 2, type: 'urgent', value: 'New resume available' },
+			{ id: 3, type: 'default', html: { __html: getLatestNotification() } },
+		];
+		const mockFn = jest.fn();
+		const wrapper = shallow(
+			<Notifications
+				listNotifications={listNotifications}
+				handleDisplayDrawer={mockFn}
+			/>
+		);
+		const spy = jest.spyOn(wrapper.instance().props, 'handleDisplayDrawer');
+
+		wrapper.find('.menuItem_1ba569s-o_O-hover_1f7q9uc').simulate('click');
+		expect(spy).toBeCalled();
+		spy.mockRestore();
+	});
+
+	it('should call handleHideDrawer when close button is clicked', () => {
+		const listNotifications = [
+			{ id: 1, type: 'default', value: 'New course available' },
+			{ id: 2, type: 'urgent', value: 'New resume available' },
+			{ id: 3, type: 'default', html: { __html: getLatestNotification() } },
+		];
+		const mockFn = jest.fn();
+		const wrapper = shallow(
+			<Notifications
+				displayDrawer={true}
+				listNotifications={listNotifications}
+				handleHideDrawer={mockFn}
+			/>
+		);
+		const spy = jest.spyOn(wrapper.instance().props, 'handleHideDrawer');
+		wrapper.find('button').simulate('click');
+
+		expect(spy).toBeCalled();
+		spy.mockRestore();
+	});
 });
