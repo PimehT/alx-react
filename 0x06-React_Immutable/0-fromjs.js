@@ -1,6 +1,7 @@
 import { fromJS } from 'immutable';
 
-/* getImmutableObject - converts @object into immutable map using fromJs
+/* getImmutableObject - converts @object into immutable 
+ * map using fromJs
  * @object: parameter to convert
  *
  * Return: Immutable Map
