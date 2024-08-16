@@ -10,5 +10,5 @@ export default function printBestStudents(grades) {
     }))
     .toObject();
 
-  console.log(filteredGrades);
+  console.log(filteredGrades.toJS());
 }
