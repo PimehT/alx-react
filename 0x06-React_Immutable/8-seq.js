@@ -8,7 +8,7 @@ export default function printBestStudents(object) {
       firstName: capitalize(student.firstName),
       lastName: capitalize(student.lastName)
     }));
-  
+
   function capitalize(word) {
     return word.charAt(0).toUpperCase() + word.slice(1);
   }
